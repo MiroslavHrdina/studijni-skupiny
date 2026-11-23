@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Čhagčhen mönlam · studijní skupina Nala</title>
+<!--
+  STRÁNKA SKUPINY NALA – ČHAGČHEN MÖNLAM
+  Co upravovat (hledej „UPRAVIT“):
+    1. Teď probíráme – verš a popis
+    2. Příští setkání – datum, čas, místo
+    3. Na příště
+    4. Odkazy: Proton (materiály, odevzdávání), Rallly, WhatsApp
+    5. Mapa textu – které verše už máme za sebou (třída "done" / "now")
+  Bez externích fontů a skriptů – nic se nenačítá od třetích stran.
+-->
+<style>
+  :root{
+    --paper:#faf7f1; --card:#ffffff; --ink:#2b2622; --muted:#6f655c; --line:#e7dfd3;
+    --maroon:#7a2e2a; --saffron:#c7801f; --saffron-soft:#f6ead6;
+    --s-prep:#9a8f84; --s-gen:#b9893b; --s-opora:#5f8a6b; --s-moud:#4f7ea0; --s-cesta:#6a6aa8;
+    --s-pohled:#a0566d; --s-medit:#7a2e2a; --s-plod:#c7801f;
+    --radius:14px;
+    --tib:"Noto Serif Tibetan","Jomolhari","Kailasa","Microsoft Himalaya","Tibetan Machine Uni",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1d1a17; --card:#262220; --ink:#eee7dd; --muted:#a99e92; --line:#3a3430;
+      --maroon:#d88a7f; --saffron:#e2a54d; --saffron-soft:#3a2f21; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 48px}
+  a{color:var(--maroon)}
+  header{padding:40px 0 22px;text-align:center;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tib-title{font-family:var(--tib);font-size:2.3rem;line-height:1.5;color:var(--maroon);margin:0}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.9rem;margin:4px 0 2px;letter-spacing:.01em}
+  .sub{color:var(--muted);margin:0}
+  .group-tag{display:inline-block;margin-top:12px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--saffron);border:1px solid var(--saffron);border-radius:99px;padding:2px 12px}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35rem;margin:34px 0 12px}
+  .grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .card .big{font-family:Georgia,serif;font-size:1.3rem;margin:0 0 6px}
+  .card p{margin:6px 0}
+  .now{background:var(--saffron-soft);border-color:transparent}
+  .progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:12px 0 4px}
+  .progress span{display:block;height:100%;background:var(--saffron)}
+  .small{font-size:.88rem;color:var(--muted)}
+  .btn{display:inline-block;text-decoration:none;background:var(--maroon);color:#fff;padding:9px 16px;border-radius:10px;
+    font-weight:600;font-size:.95rem;margin:8px 8px 0 0}
+  .btn.ghost{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon)}
+  .todo{outline:2px dashed #d9534f;outline-offset:2px}
+  ul.clean{list-style:none;padding:0;margin:8px 0 0}
+  ul.clean li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+  ul.clean li:first-child{border-top:0}
+  .fmt{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:2px 6px;border-radius:6px;background:var(--line);color:var(--muted)}
+  .new{font-size:.7rem;font-weight:700;color:#fff;background:var(--saffron);padding:1px 7px;border-radius:99px;margin-left:6px}
+  .folder{font-weight:600;margin:14px 0 0}
+  /* mapa veršů */
+  .verses{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:7px;margin:10px 0 14px}
+  .v{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
+    border:2px solid var(--c);color:var(--c);background:transparent}
+  .v.done{background:var(--c);color:#fff}
+  .v.now{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--saffron);background:var(--c);color:#fff}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--muted)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--c);margin-right:5px;vertical-align:-1px}
+  details{border-top:1px solid var(--line);padding:10px 0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"›";color:var(--muted);transition:transform .15s;display:inline-block;width:10px}
+  details[open] summary::before{transform:rotate(90deg)}
+  summary .dot{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
+  summary .rng{margin-left:auto;font-weight:normal;color:var(--muted);font-size:.85rem}
+  details ol{margin:8px 0 2px;padding-left:22px}
+  details li{margin:3px 0}
+  details li b{color:var(--muted);font-weight:600}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:6px 0 0}
+  .steps li{counter-increment:s;padding:6px 0 6px 38px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:5px;width:26px;height:26px;border-radius:50%;
+    background:var(--saffron-soft);color:var(--saffron);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p style="margin:14px 0 0;font-size:.85rem"><a href="../" style="text-decoration:none">← všechny skupiny</a></p>
+
+<header>
+  <p class="tib-title" lang="bo">ཕྱག་ཆེན་སྨོན་ལམ།</p>
+  <h1>Čhagčhen mönlam</h1>
+  <p class="sub">Přání mahámudry 3. Karmapy Rangdžunga Dordžeho</p>
+  <span class="group-tag">Studijní skupina · Nala</span>
+</header>
+
+<div class="grid two">
+  <!-- UPRAVIT: co právě probíráme -->
+  <section class="card now">
+    <h3>Teď probíráme</h3>
+    <p class="big">Verš 4 · zvláštní opora</p>
+    <p>Vzácné lidské tělo (osm svobod, deset podmínek), důvěra, úsilí, moudrost a duchovní přítel s jeho pokyny.</p>
+    <div class="progress" aria-hidden="true"><span style="width:16%"></span></div>
+    <p class="small">4 z 25 veršů</p>
+  </section>
+
+  <!-- UPRAVIT: příští setkání -->
+  <section class="card">
+    <h3>Příští setkání</h3>
+    <p class="big todo">[den, datum · čas]</p>
+    <p class="small todo">Nala, [místo / online odkaz]</p>
+    <a class="btn ghost todo" href="https://rallly.co/">Hlasovat o dalším termínu</a>
+  </section>
+</div>
+
+<!-- UPRAVIT: na příště -->
+<section class="card" style="margin-top:14px">
+  <h3>Na příště</h3>
+  <ul class="clean">
+    <li>Zopakovat si nazpaměť verše 1–4.</li>
+    <li>Projít si pracovní list 4 · duchovní přítel – co nám nebylo jasné, probereme spolu.</li>
+  </ul>
+  <p class="small" style="margin-top:12px">Chceš se podělit o svůj list nebo poznámky? Nahraj je do sdílené složky, nikdo se nemusí nikam registrovat.</p>
+  <a class="btn ghost todo" href="#PROTON-ODEVZDAVANI">Nahrát do složky</a>
+</section>
+
+<h2>Materiály</h2>
+<section class="card">
+  <p>Všechno je v jedné sdílené složce na Proton Drive. Otevře se v prohlížeči, stahovat můžeš bez účtu.</p>
+  <a class="btn todo" href="#PROTON-MATERIALY">Otevřít složku s materiály</a>
+
+  <p class="folder">Text</p>
+  <ul class="clean">
+    <li><span class="fmt">PDF</span><span>Čhagčhen mönlam – tibetský text (25 veršů)</span></li>
+    <li><span class="fmt">PDF</span><span>Český překlad <span class="small">– připravuje se, vyjde ve sborníku Nala</span></span></li>
+  </ul>
+
+  <p class="folder">Přehledy celého textu</p>
+  <ul class="clean">
+    <li><span class="fmt">A3</span><span>1 · Mapa textu – všech 25 veršů a jak na sebe navazují</span></li>
+    <li><span class="fmt">A3</span><span>2 · Verše-osnovy – verše 6, 7, 8, 9 a 18 řádek po řádku</span></li>
+  </ul>
+
+  <p class="folder">Verš 4</p>
+  <ul class="clean">
+    <li><span class="fmt">A3</span><span>3 · Tělo</span></li>
+    <li><span class="fmt">A3</span><span>4 · Mysl a přítel</span></li>
+    <li><span class="fmt">PDF</span><span>Pracovní list 1 · osm svobod</span></li>
+    <li><span class="fmt">PDF</span><span>Pracovní list 2 · deset podmínek</span></li>
+    <li><span class="fmt">DOCX</span><span>Pracovní list 3 · důvěra, úsilí, moudrost</span></li>
+    <li><span class="fmt">DOCX</span><span>Pracovní list 4 · duchovní přítel<span class="new">nové</span></span></li>
+  </ul>
+  <p class="small" style="margin-top:12px">Listy A3 se dají vytisknout i na A4 – v tisku zvol „přizpůsobit stránce“. Listy ve formátu DOCX si můžeš upravovat a dopisovat.</p>
+</section>
+
+<h2>Mapa textu</h2>
+<section class="card">
+  <p class="small" style="margin-top:0">Text procházíme podle komentáře Thrangu Rinpočheho, který vychází z výkladu 8. Situpy. Plná barva = už probráno.</p>
+
+  <!-- UPRAVIT: probrané verše mají třídu "done", aktuální "now" -->
+  <div class="verses" aria-label="25 veršů textu">
+    <span class="v done" style="--c:var(--s-prep)">1</span>
+    <span class="v done" style="--c:var(--s-gen)">2</span>
+    <span class="v done" style="--c:var(--s-opora)">3</span>
+    <span class="v now"  style="--c:var(--s-opora)">4</span>
+    <span class="v" style="--c:var(--s-moud)">5</span>
+    <span class="v" style="--c:var(--s-cesta)">6</span>
+    <span class="v" style="--c:var(--s-pohled)">7</span>
+    <span class="v" style="--c:var(--s-pohled)">8</span>
+    <span class="v" style="--c:var(--s-pohled)">9</span>
+    <span class="v" style="--c:var(--s-pohled)">10</span>
+    <span class="v" style="--c:var(--s-pohled)">11</span>
+    <span class="v" style="--c:var(--s-pohled)">12</span>
+    <span class="v" style="--c:var(--s-pohled)">13</span>
+    <span class="v" style="--c:var(--s-pohled)">14</span>
+    <span class="v" style="--c:var(--s-medit)">15</span>
+    <span class="v" style="--c:var(--s-medit)">16</span>
+    <span class="v" style="--c:var(--s-medit)">17</span>
+    <span class="v" style="--c:var(--s-medit)">18</span>
+    <span class="v" style="--c:var(--s-medit)">19</span>
+    <span class="v" style="--c:var(--s-medit)">20</span>
+    <span class="v" style="--c:var(--s-medit)">21</span>
+    <span class="v" style="--c:var(--s-medit)">22</span>
+    <span class="v" style="--c:var(--s-medit)">23</span>
+    <span class="v" style="--c:var(--s-plod)">24</span>
+    <span class="v" style="--c:var(--s-prep)">25</span>
+  </div>
+  <div class="legend">
+    <span><i style="--c:var(--s-prep)"></i>příprava a závěr</span>
+    <span><i style="--c:var(--s-gen)"></i>obecná aspirace</span>
+    <span><i style="--c:var(--s-opora)"></i>opora cesty</span>
+    <span><i style="--c:var(--s-moud)"></i>moudrost</span>
+    <span><i style="--c:var(--s-cesta)"></i>neomylná cesta</span>
+    <span><i style="--c:var(--s-pohled)"></i>praxe: porozumění a pohled</span>
+    <span><i style="--c:var(--s-medit)"></i>praxe: meditace</span>
+    <span><i style="--c:var(--s-plod)"></i>plod</span>
+  </div>
+
+  <div style="margin-top:18px">
+    <details style="--c:var(--s-prep)">
+      <summary><span class="dot"></span>Příprava<span class="rng">1</span></summary>
+      <ol start="1"><li>Prosba o požehnání, ať se přání splní.</li></ol>
+    </details>
+    <details style="--c:var(--s-gen)">
+      <summary><span class="dot"></span>Obecná aspirace<span class="rng">2</span></summary>
+      <ol start="2"><li>Ať všechno dobré doteče jako řeky ze sněžné hory do oceánu čtyř těl.</li></ol>
+    </details>
+    <details style="--c:var(--s-opora)" open>
+      <summary><span class="dot"></span>Specifická aspirace · I · Opora cesty<span class="rng">3–4</span></summary>
+      <ol start="3">
+        <li>Společná opora: ve všech životech dobro a štěstí.</li>
+        <li>Zvláštní opora: lidské tělo, důvěra, úsilí, moudrost, duchovní přítel a jeho pokyny.</li>
+      </ol>
+    </details>
+    <details style="--c:var(--s-moud)">
+      <summary><span class="dot"></span>II · Moudrost<span class="rng">5</span></summary>
+      <ol start="5"><li>Tři moudrosti: naslouchání, přemýšlení, meditace.</li></ol>
+    </details>
+    <details style="--c:var(--s-cesta)">
+      <summary><span class="dot"></span>III · Neomylná cesta<span class="rng">6</span></summary>
+      <ol start="6"><li>Základ, cesta, plod: dvě pravdy, dvojí nahromadění, dvojí užitek.</li></ol>
+    </details>
+    <details style="--c:var(--s-pohled)">
+      <summary><span class="dot"></span>IV · Praxe cesty: porozumění a pohled<span class="rng">7–14</span></summary>
+      <ol start="7">
+        <li>Porozumění: co se čím očišťuje.</li>
+        <li><b>Stručně:</b> pohled, meditace, jednání.</li>
+        <li><b>Stručně:</b> čtyři kroky pohledu.</li>
+        <li>Jevy jsou mysl.</li>
+        <li>Mysl je prázdná – ani neexistuje, ani není neexistující.</li>
+        <li>… a nedá se označit – „to je ono“ ani „to není ono“.</li>
+        <li>Prázdná, a přece se jeví.</li>
+        <li>Rozetnout pochyby – vše je mysl.</li>
+      </ol>
+    </details>
+    <details style="--c:var(--s-medit)">
+      <summary><span class="dot"></span>IV · Praxe cesty: meditace<span class="rng">15–23</span></summary>
+      <ol start="15">
+        <li><b>Stručně:</b> jak spočinout.</li>
+        <li>Šamatha.</li>
+        <li>Vipašjaná.</li>
+        <li>Vipašjaná až ke kořeni.</li>
+        <li>Jednota obou a její jména.</li>
+        <li>Prožitky: blaho, jasnost, nemyšlení.</li>
+        <li>Realizace.</li>
+        <li>Soucit.</li>
+        <li>Soucit a prázdnota v jednotě.</li>
+      </ol>
+    </details>
+    <details style="--c:var(--s-plod)">
+      <summary><span class="dot"></span>V · Plod<span class="rng">24</span></summary>
+      <ol start="24"><li>Buddhovství.</li></ol>
+    </details>
+    <details style="--c:var(--s-prep)">
+      <summary><span class="dot"></span>Závěr<span class="rng">25</span></summary>
+      <ol start="25"><li>Ať se přání splní – ozvěna prvního verše.</li></ol>
+    </details>
+  </div>
+</section>
+
+<h2>Jsi tu nově?</h2>
+<section class="card">
+  <ol class="steps">
+    <li>Stáhni si <b>Mapu textu</b> – uvidíš celý text najednou a kde se zrovna nacházíme.</li>
+    <li>Začni se učit nazpaměť od 1. verše. Nemusíš hned dohnat ostatní – verše se v textu vracejí a navazují.</li>
+    <li>Ještě nečteš tibetské písmo? Skupina <b>Abeceda</b> začíná od základů. <span class="small">(stránku připravujeme)</span></li>
+    <li>Na cokoli se zeptej ve WhatsApp skupině, rádi pomůžeme.</li>
+  </ol>
+  <a class="btn ghost todo" href="#WHATSAPP">WhatsApp skupina</a>
+</section>
+
+<footer>
+  Mirek · aktualizováno 23. 11. 2026
+</footer>
+
+</div>
+</body>
+</html>
