@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tibetská abeceda · krátký kurz tibetského písma</title>
+<!--
+  STRÁNKA KURZU – TIBETSKÁ ABECEDA
+  Stálá stránka: postup kurzu a materiály se nemění.
+  Po každém běhu upravit jen (hledej „UPRAVIT“):
+    1. Aktuální běh – skupina, text, termíny
+    2. Odkaz na složku s materiály v Proton Drive
+  Bez externích fontů a skriptů – nic se nenačítá od třetích stran.
+-->
+<style>
+  :root{
+    --paper:#faf7f1; --card:#ffffff; --ink:#2b2622; --muted:#6f655c; --line:#e7dfd3;
+    --maroon:#7a2e2a; --saffron:#c7801f; --saffron-soft:#f6ead6; --green:#5f8a6b;
+    --p1:#b9893b; --p2:#5f8a6b; --p3:#4f7ea0; --p4:#a0566d; --p5:#6a6aa8; --p6:#7a2e2a; --p7:#c7801f;
+    --radius:14px;
+    --tib:"Noto Serif Tibetan","Jomolhari","Kailasa","Microsoft Himalaya","Tibetan Machine Uni",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1d1a17; --card:#262220; --ink:#eee7dd; --muted:#a99e92; --line:#3a3430;
+      --maroon:#d88a7f; --saffron:#e2a54d; --saffron-soft:#3a2f21; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 48px}
+  a{color:var(--maroon)}
+  .back{display:inline-block;margin-top:18px;font-size:.88rem;text-decoration:none;color:var(--muted)}
+  header{padding:22px 0 22px;text-align:center;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tib-title{font-family:var(--tib);font-size:2.3rem;line-height:1.5;color:var(--maroon);margin:0}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.9rem;margin:4px 0 2px;letter-spacing:.01em}
+  .sub{color:var(--muted);margin:0}
+  .group-tag{display:inline-block;margin-top:12px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green);border:1px solid var(--green);border-radius:99px;padding:2px 12px}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35rem;margin:34px 0 12px}
+  .grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .card .big{font-family:Georgia,serif;font-size:1.3rem;margin:0 0 6px}
+  .card p{margin:6px 0}
+  .now{background:var(--saffron-soft);border-color:transparent}
+  .small{font-size:.88rem;color:var(--muted)}
+  .btn{display:inline-block;text-decoration:none;background:var(--maroon);color:#fff;padding:9px 16px;border-radius:10px;
+    font-weight:600;font-size:.95rem;margin:8px 8px 0 0}
+  .btn.ghost{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon)}
+  ul.clean{list-style:none;padding:0;margin:8px 0 0}
+  ul.clean li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+  ul.clean li:first-child{border-top:0}
+  .fmt{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:2px 6px;border-radius:6px;background:var(--line);color:var(--muted)}
+  .folder{font-weight:600;margin:14px 0 0}
+  .tib{font-family:var(--tib)}
+  /* stavba slabiky */
+  .syl{text-align:center;margin:6px 0 4px}
+  .syl .word{font-family:var(--tib);font-size:3.6rem;line-height:1.6;color:var(--maroon)}
+  .syl .wy{font-size:.95rem;color:var(--muted)}
+  .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(78px,1fr));gap:8px;margin:14px 0 6px}
+  .part{border-radius:10px;border:2px solid var(--c);padding:8px 6px;text-align:center}
+  .part .g{font-family:var(--tib);font-size:1.7rem;line-height:1.5;color:var(--c);display:block}
+  .part .n{font-size:.78rem;font-weight:600;display:block}
+  .part .w{font-size:.78rem;color:var(--muted)}
+  .part.root{background:var(--c)}
+  .part.root .g,.part.root .n,.part.root .w{color:#fff}
+  /* postup */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:6px 0 0}
+  .steps li{counter-increment:s;padding:6px 0 6px 38px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:5px;width:26px;height:26px;border-radius:50%;
+    background:var(--saffron-soft);color:var(--saffron);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  .steps li b{display:block}
+  .meet{border-left:4px solid var(--c);padding:4px 0 4px 14px;margin:12px 0}
+  .meet b{display:block}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../">← všechny skupiny</a>
+
+<header>
+  <p class="tib-title" lang="bo">ཀ་ཁ་ག་ང་།</p>
+  <h1>Tibetská abeceda</h1>
+  <p class="sub">Čtení a psaní tibetského písma od nuly</p>
+  <span class="group-tag">Krátký kurz · 2–3 setkání</span>
+</header>
+
+<div class="grid two">
+  <!-- UPRAVIT: aktuální běh – skupina, text, termíny -->
+  <section class="card now">
+    <h3>Aktuální běh</h3>
+    <p class="big">Skupina Nala</p>
+    <p>Potom čteme <b>Čhagčhen mönlam</b> – slova na procvičování bereme přímo z něj.</p>
+    <p class="small">Termíny domlouváme ve skupině.</p>
+    <!-- až budou termíny, nahradit řádek výše např.:
+    <ul class="clean">
+      <li>1. setkání · [den, datum · čas]</li>
+      <li>2. setkání · [den, datum · čas]</li>
+      <li>3. setkání · [den, datum · čas]</li>
+    </ul>
+    -->
+  </section>
+
+  <section class="card">
+    <h3>Kde se potkáme</h3>
+    <p class="big">Online přes Zoom</p>
+    <a class="btn ghost" href="https://us06web.zoom.us/j/87627136952?pwd=POfFBK7cNnp7YxrVJtEGg5sDeNzJ1b.1">Připojit se přes Zoom</a>
+    <p class="small" style="margin-top:8px">ID schůzky 876 2713 6952 · odkaz je pořád stejný, platí pro všechna setkání</p>
+  </section>
+</div>
+
+<section class="card" style="margin-top:14px">
+  <h3>Co si odneseš</h3>
+  <ul class="clean">
+    <li>Přečteš a vyslovíš tibetský text – i delší jména a slova z modliteb.</li>
+    <li>Poznáš, které písmeno ve slabice je kořenové a co se kolem něj děje.</li>
+    <li>Napíšeš všech 30 písmen abecedy.</li>
+  </ul>
+  <p class="small" style="margin-top:10px">Nic nemusíš umět předem. Stačí vytisknout přehled a mít po ruce tužku.</p>
+</section>
+
+<h2>Materiály</h2>
+<section class="card">
+  <!-- UPRAVIT: odkaz na sdílenou složku Proton Drive pro tento kurz -->
+  <a class="btn" href="#PROTON-ABECEDA">Otevřít složku s materiály</a>
+  <p class="small" style="margin:8px 0 0">Složka se otevře bez registrace – můžeš si soubory prohlédnout i stáhnout.</p>
+
+  <p class="folder">Na celý kurz</p>
+  <ul class="clean">
+    <li><span class="fmt">PDF</span><span>1 · Přehled – abeceda, podepsaná a nadepsaná písmena, předpony a přípony (2 strany A4)</span></li>
+    <li><span class="fmt">PDF</span><span>2 · Jak psát písmenka – pořadí tahů pro všech 30 písmen</span></li>
+  </ul>
+
+  <p class="folder">Cvičení do hodiny</p>
+  <ul class="clean">
+    <li><span class="fmt">DOCX</span><span>1 · Nadepsaná a podepsaná písmena</span></li>
+    <li><span class="fmt">DOCX</span><span>2 · Celá slova a jména</span></li>
+  </ul>
+
+  <p class="folder">Domácí úkoly</p>
+  <ul class="clean">
+    <li><span class="fmt">DOCX</span><span>1 · Nadepsaná a podepsaná písmena</span></li>
+    <li><span class="fmt">DOCX</span><span>2 · Celá slova a jména</span></li>
+  </ul>
+  <p class="small" style="margin-top:12px">Přehled se nejlíp čte vytištěný. Listy ve formátu DOCX si můžeš dopisovat přímo v počítači, nebo je vytisknout a vyplnit tužkou.</p>
+</section>
+
+<h2>Jak kurz probíhá</h2>
+<section class="card">
+  <ol class="steps">
+    <li><b>Abeceda</b>30 písmen, samohlásky a jak se písmena vyslovují.</li>
+    <li><b>Jak psát písmenka</b>Pořadí tahů – psaní pomáhá písmena si zapamatovat.</li>
+    <li><b>Podepsaná a nadepsaná písmena</b>Co se píše pod a nad kořenové písmeno a jak to mění výslovnost.</li>
+    <li><b>Předpony a přípony</b>Písmena před a za kořenem – která se čtou a která ne.</li>
+    <li><b>Čtení slov</b>Procvičujeme na slovech z textu, který bude skupina číst.</li>
+  </ol>
+
+  <p class="small" style="margin-top:16px">Obvyklé rozložení do setkání:</p>
+  <div class="meet" style="--c:var(--p1)"><b>1. setkání</b>Abeceda, samohlásky, psaní písmen.</div>
+  <div class="meet" style="--c:var(--p2)"><b>2. setkání</b>Podepsaná a nadepsaná písmena · cvičení 1 · domácí úkol 1.</div>
+  <div class="meet" style="--c:var(--p3)"><b>3. setkání</b>Předpony a přípony, celá slova · cvičení 2 · domácí úkol 2.</div>
+</section>
+
+<h2>Stavba slabiky</h2>
+<section class="card">
+  <p class="small" style="margin-top:0">Každá tibetská slabika má jedno kořenové písmeno. Všechno ostatní se k němu přidává – před, nad, pod i za něj. Slabika končí tečkou (ཙེག་).</p>
+  <div class="syl">
+    <div class="word" lang="bo">བསྒྲུབས་</div>
+    <div class="wy">bsgrubs · čte se „drub“</div>
+  </div>
+  <div class="parts">
+    <div class="part" style="--c:var(--p4)"><span class="g" lang="bo">བ</span><span class="n">předpona</span><span class="w">b-</span></div>
+    <div class="part" style="--c:var(--p5)"><span class="g" lang="bo">ས</span><span class="n">nadepsané</span><span class="w">s-</span></div>
+    <div class="part root" style="--c:var(--p6)"><span class="g" lang="bo">ག</span><span class="n">kořenové</span><span class="w">g</span></div>
+    <div class="part" style="--c:var(--p2)"><span class="g" lang="bo">ྲ</span><span class="n">podepsané</span><span class="w">-r-</span></div>
+    <div class="part" style="--c:var(--p3)"><span class="g" lang="bo">ུ</span><span class="n">samohláska</span><span class="w">u</span></div>
+    <div class="part" style="--c:var(--p1)"><span class="g" lang="bo">བ</span><span class="n">přípona</span><span class="w">-b</span></div>
+    <div class="part" style="--c:var(--p7)"><span class="g" lang="bo">ས</span><span class="n">2. přípona</span><span class="w">-s</span></div>
+  </div>
+  <p class="small">Většina slabik je mnohem jednodušší – tady je vidět, co všechno se kolem kořene může sejít najednou.</p>
+</section>
+
+<footer>
+  Mirek · aktualizováno 23. 11. 2026
+</footer>
+
+</div>
+</body>
+</html>
