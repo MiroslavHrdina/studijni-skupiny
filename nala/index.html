@@ -61,6 +61,18 @@
   .fmt{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:2px 6px;border-radius:6px;background:var(--line);color:var(--muted)}
   .new{font-size:.7rem;font-weight:700;color:#fff;background:var(--saffron);padding:1px 7px;border-radius:99px;margin-left:6px}
   .folder{font-weight:600;margin:14px 0 0}
+  /* příští setkání */
+  .meet{display:flex;align-items:center;gap:14px;margin:4px 0 12px}
+  .cal{flex:none;width:68px;border:1.5px solid var(--maroon);border-radius:12px;overflow:hidden;text-align:center;background:var(--card)}
+  .cal-m{display:block;background:var(--maroon);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 0}
+  .cal-d{display:block;font-family:Georgia,serif;font-size:1.7rem;line-height:1.35;color:var(--ink)}
+  .meet-time{font-size:1.15rem;font-weight:600;margin:0!important}
+  .where{border-top:1px solid var(--line)}
+  .where-row{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+  .where-row:last-child{border-bottom:0;padding-bottom:0}
+  .where-k{flex:none;width:68px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .btn.sm{padding:6px 12px;font-size:.88rem;margin:0 0 6px}
+  .zoom-id{display:block}
   /* materiály */
   .fhead{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-bottom:10px}
   .fhead .btn{margin:0}
@@ -126,13 +138,22 @@
     <p class="small">verš 5 z 25</p>
   </section>
 
-  <!-- UPRAVIT: příští setkání -->
+  <!-- UPRAVIT: příští setkání – dlaždice s datem (den, měsíc), den v týdnu, čas, místo -->
   <section class="card">
     <h3>Příští setkání</h3>
-    <p class="big">pondělí 30. 11. · 18:00–20:00</p>
-    <p class="small">Tuchoměřice, nebo online přes Zoom</p>
-    <a class="btn ghost" href="https://us06web.zoom.us/j/88320280255?pwd=Xif4m03dXqRbzpkCVyolLArIsa41bn.1">Připojit se přes Zoom</a>
-    <p class="small" style="margin-top:8px">ID schůzky 883 2028 0255 · heslo 216988 · odkaz je pořád stejný</p>
+    <div class="meet">
+      <div class="cal"><span class="cal-m">listopad</span><span class="cal-d">30</span></div>
+      <div>
+        <p class="big" style="margin:0">pondělí</p>
+        <p class="meet-time">18:00–20:00</p>
+      </div>
+    </div>
+    <div class="where">
+      <div class="where-row"><span class="where-k">Na místě</span><span>Tuchoměřice</span></div>
+      <div class="where-row"><span class="where-k">Online</span>
+        <span><a class="btn ghost sm" href="https://us06web.zoom.us/j/88320280255?pwd=Xif4m03dXqRbzpkCVyolLArIsa41bn.1">Připojit se přes Zoom</a>
+        <span class="small zoom-id">ID 883 2028 0255 · heslo 216988<br>odkaz je pořád stejný</span></span></div>
+    </div>
     <!-- až bude anketa: <a class="btn ghost" href="RALLLY-ODKAZ">Hlasovat o dalším termínu</a> -->
   </section>
 </div>
