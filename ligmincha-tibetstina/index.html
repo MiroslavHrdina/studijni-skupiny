@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Čteme své modlitby tibetsky · Ligmincha</title>
+<!--
+  STRÁNKA SKUPINY LIGMINCHA – TIBETŠTINA
+  Co upravovat (hledej „UPRAVIT“):
+    1. Teď probíráme – modlitba a popis
+    2. Příští setkání – datum, čas, místo, Zoom
+    3. Na příště
+    4. Materiály – odkaz na Proton a seznam souborů (složky 1–3 jako na Protonu)
+    5. Co máme za sebou
+    6. Datum „aktualizováno“ v patičce – měnit při KAŽDÉ úpravě stránky
+  Čas a místo víkendu 12.–13. 12. zatím chybí („upřesníme“).
+  Bez externích fontů a skriptů – nic se nenačítá od třetích stran.
+-->
+<style>
+  :root{
+    --paper:#faf7f1; --card:#ffffff; --ink:#2b2622; --muted:#6f655c; --line:#e7dfd3;
+    --maroon:#7a2e2a; --saffron:#c7801f; --blue:#4f7ea0; --saffron-soft:#f6ead6;
+    --s-prep:#9a8f84; --s-gen:#b9893b; --s-opora:#5f8a6b; --s-moud:#4f7ea0; --s-cesta:#6a6aa8;
+    --s-pohled:#a0566d; --s-medit:#7a2e2a; --s-plod:#c7801f;
+    --radius:14px;
+    --tib:"Noto Serif Tibetan","Jomolhari","Kailasa","Microsoft Himalaya","Tibetan Machine Uni",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1d1a17; --card:#262220; --ink:#eee7dd; --muted:#a99e92; --line:#3a3430;
+      --maroon:#d88a7f; --saffron:#e2a54d; --saffron-soft:#3a2f21; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 48px}
+  a{color:var(--maroon)}
+  header{padding:40px 0 22px;text-align:center;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tib-title{font-family:var(--tib);font-size:2.3rem;line-height:1.5;color:var(--maroon);margin:0}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.9rem;margin:4px 0 2px;letter-spacing:.01em}
+  .sub{color:var(--muted);margin:0}
+  .group-tag{display:inline-block;margin-top:12px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--saffron);border:1px solid var(--saffron);border-radius:99px;padding:2px 12px}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:1.35rem;margin:34px 0 12px}
+  .grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .card .big{font-family:Georgia,serif;font-size:1.3rem;margin:0 0 6px}
+  .card p{margin:6px 0}
+  .now{background:var(--saffron-soft);border-color:transparent}
+  .progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:12px 0 4px}
+  .progress span{display:block;height:100%;background:var(--saffron)}
+  .small{font-size:.88rem;color:var(--muted)}
+  .btn{display:inline-block;text-decoration:none;background:var(--maroon);color:#fff;padding:9px 16px;border-radius:10px;
+    font-weight:600;font-size:.95rem;margin:8px 8px 0 0}
+  .btn.ghost{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon)}
+  .todo{outline:2px dashed #d9534f;outline-offset:2px}
+  ul.clean{list-style:none;padding:0;margin:8px 0 0}
+  ul.clean li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+  ul.clean li:first-child{border-top:0}
+  .fmt{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:2px 6px;border-radius:6px;background:var(--line);color:var(--muted)}
+  .new{font-size:.7rem;font-weight:700;color:#fff;background:var(--saffron);padding:1px 7px;border-radius:99px;margin-left:6px}
+  .folder{font-weight:600;margin:14px 0 0}
+  /* příští setkání */
+  .meet{display:flex;align-items:center;gap:14px;margin:4px 0 12px}
+  .cal{flex:none;width:68px;border:1.5px solid var(--maroon);border-radius:12px;overflow:hidden;text-align:center;background:var(--card)}
+  .cal-m{display:block;background:var(--maroon);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 0}
+  .cal-d{display:block;font-family:Georgia,serif;font-size:1.7rem;line-height:1.35;color:var(--ink)}
+  .meet-time{font-size:1.15rem;font-weight:600;margin:0!important}
+  .where{border-top:1px solid var(--line)}
+  .where-row{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+  .where-row:last-child{border-bottom:0;padding-bottom:0}
+  .where-k{flex:none;width:68px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .btn.sm{padding:6px 12px;font-size:.88rem;margin:0 0 6px}
+  .zoom-id{display:block}
+  /* materiály */
+  .fhead{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-bottom:10px}
+  .fhead .btn{margin:0}
+  .fhead .small{margin:0}
+  .fdir summary{font-size:1.02rem}
+  .fnum{width:24px;height:24px;border-radius:7px;background:var(--saffron-soft);color:var(--saffron);font-weight:700;font-size:.85rem;
+    display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .fdir .cnt{margin-left:auto;font-weight:normal;color:var(--muted);font-size:.85rem}
+  .card .fsub{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:12px 0 0 44px}
+  ul.files{list-style:none;padding:0;margin:4px 0 2px 44px}
+  ul.files li{display:flex;gap:10px;align-items:baseline;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line)}
+  ul.files li:first-child{border-top:0}
+  .fdesc{display:block;font-size:.85rem;color:var(--muted)}
+  .tags{display:flex;gap:5px;flex:none}
+  .fmt.ed{background:var(--saffron-soft);color:var(--saffron)}
+  @media(max-width:480px){.card .fsub,ul.files{margin-left:0}}
+  /* mapa veršů */
+  .verses{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:7px;margin:10px 0 14px}
+  .v{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
+    border:2px solid var(--c);color:var(--c);background:transparent}
+  .v.done{background:var(--c);color:#fff}
+  .v.now{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--saffron);background:linear-gradient(to top,var(--c) 50%,transparent 50%);color:var(--ink)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--muted)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--c);margin-right:5px;vertical-align:-1px}
+  details{border-top:1px solid var(--line);padding:10px 0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"›";color:var(--muted);transition:transform .15s;display:inline-block;width:10px}
+  details[open] summary::before{transform:rotate(90deg)}
+  summary .dot{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
+  summary .rng{margin-left:auto;font-weight:normal;color:var(--muted);font-size:.85rem}
+  details ol{margin:8px 0 2px;padding-left:22px}
+  details li{margin:3px 0}
+  details li b{color:var(--muted);font-weight:600}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:6px 0 0}
+  .steps li{counter-increment:s;padding:6px 0 6px 38px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:5px;width:26px;height:26px;border-radius:50%;
+    background:var(--saffron-soft);color:var(--saffron);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  .qr{flex:none;border-radius:8px;background:#fff}
+  @media (prefers-color-scheme: dark){.qr{filter:brightness(.72)}}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="tib-title" lang="bo">བོད་ཡིག་ཀློག་པ།</p>
+  <h1>Čteme své modlitby tibetsky</h1>
+  <p class="sub">Tibetské písmo a bönské modlitby Ligminchy – slovo po slovu</p>
+  <span class="group-tag" style="color:var(--blue);border-color:var(--blue)">Studijní skupina · Ligmincha</span>
+</header>
+
+<div class="grid two">
+  <!-- UPRAVIT: co právě probíráme -->
+  <section class="card now">
+    <h3>Teď probíráme</h3>
+    <p class="big">Útočiště a bódhičitta</p>
+    <p lang="bo" style="font-family:var(--tib);font-size:1.2rem;line-height:1.75;margin:4px 0">མཁྱེན་ལྡན་བརྩེ་བའི་བླ་མ་རྣམས་ལ་སྐྱབས་སུ་མཆི།<br>སྟོབས་ལྡན་སྔགས་ཀྱི་ཡི་དམ་ལྷ་ལ་སྐྱབས་སུ་མཆི།</p>
+    <p>Přijímám útočiště v moudrých a laskavých lamech,<br>přijímám útočiště v silných tantrických jidamech…</p>
+    <p class="small">Krátké útočiště a bódhičitta, které recitujeme na začátku praxe. Věnování zásluh už máme za sebou.</p>
+  </section>
+
+  <!-- UPRAVIT: příští setkání -->
+  <section class="card">
+    <h3>Příští setkání</h3>
+    <div class="meet">
+      <div class="cal"><span class="cal-m">prosinec</span><span class="cal-d" style="font-size:1.35rem">12.–13.</span></div>
+      <div>
+        <p class="big" style="margin:0">sobota a neděle</p>
+        <p class="meet-time">čas upřesníme</p>
+      </div>
+    </div>
+    <div class="where">
+      <div class="where-row"><span class="where-k">Na místě</span><span>místo upřesníme</span></div>
+      <div class="where-row"><span class="where-k">Program</span><span>zopakujeme čtení, trochu si procvičíme a přečteme a rozebereme Útočiště a bódhičittu</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- UPRAVIT: na příště -->
+<section class="card" style="margin-top:14px">
+  <h3>Na víkend se připrav</h3>
+  <ol class="steps">
+    <li><b>Zopakuj si abecedu</b>Projdi si přehled „Tibetská abeceda“ z kurzu – písmena, předpony a přípony.</li>
+    <li><b>Vyplň Cvičení 1</b>Slabiky a slova z Věnování zásluh, které už znáš. Kdo má chuť, zkusí i složitější Cvičení 2 se slovy z nové modlitby.</li>
+    <li><b>Přečti si nahlas Věnování zásluh</b>Ať se ti tibetský text pořádně usadí v puse.</li>
+  </ol>
+  <p class="small">Nic z toho není povinné – každé písmenko, které si zopakuješ, se na víkendu počítá. Co nepůjde, probereme spolu.</p>
+</section>
+
+<h2>Materiály</h2>
+<!-- UPRAVIT: materiály – složky odpovídají očíslovaným složkám na Protonu -->
+<section class="card">
+  <div class="fhead">
+    <a class="btn" href="https://drive.proton.me/urls/DXRHK3RKBW#I6eYeyhHM3lT" target="_blank" rel="noopener">Otevřít složku na Protonu</a>
+    <p class="small">Složka se otevře bez registrace. Složky jsou na Protonu očíslované stejně jako tady.</p>
+  </div>
+  <details class="fdir" open>
+    <summary><span class="fnum">1</span>Abeceda<span class="cnt">1 soubor</span></summary>
+    <ul class="files">
+      <li><span class="fname">Přehled – Tibetská abeceda <span class="fdesc">ten z kurzu: abeceda, podepsaná a nadepsaná písmena, předpony a přípony</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A4 · 2 strany</span></span></li>
+    </ul>
+  </details>
+  <details class="fdir" open>
+    <summary><span class="fnum">2</span>Cvičení<span class="cnt">2 listy · řešení</span></summary>
+    <ul class="files">
+      <li><span class="fname">Cvičení 1 · Slabiky a slova z Věnování zásluh <span class="new">nové</span><span class="fdesc">jednodušší – text, který už znáš</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt ed">DOCX</span></span></li>
+      <li><span class="fname">Cvičení 2 · Slova a verše z Útočiště a bódhičitty <span class="new">nové</span><span class="fdesc">složitější – slova z nové modlitby a malé hádanky</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt ed">DOCX</span></span></li>
+      <li><span class="fname">Řešení ke cvičením 1 a 2 <span class="fdesc">nejdřív si list vyplň, pak si ho zkontroluj</span></span><span class="tags"><span class="fmt">PDF</span></span></li>
+    </ul>
+  </details>
+  <details class="fdir" open>
+    <summary><span class="fnum">3</span>Útočiště a bódhičitta<span class="cnt">2 soubory</span></summary>
+    <ul class="files">
+      <li><span class="fname">Slovo po slovu <span class="new">nové</span><span class="fdesc">celý text, rozbor každého řádku a malá gramatika</span></span><span class="tags"><span class="fmt">PDF</span></span></li>
+      <li><span class="fname">Slovíčka <span class="fdesc">vlastní slovníček k doplnění</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt ed">DOCX</span></span></li>
+    </ul>
+  </details>
+  <p class="small" style="margin-top:12px"><span class="fmt ed">DOCX</span> si můžeš dopisovat v počítači, PDF je připravené k tisku na A4 a vyplnění tužkou.</p>
+</section>
+
+<h2>Co máme za sebou</h2>
+<!-- UPRAVIT: co máme za sebou -->
+<section class="card">
+  <ul class="clean">
+    <li>Dva dny kurzu: naučili jsme se číst tibetské písmo.</li>
+    <li>Věnování zásluh – prošli jsme ho slovo po slovu.</li>
+    <li>Kdo na kurzu nebyl, dohnal to na dvou online setkáních.</li>
+  </ul>
+</section>
+
+<footer>
+  <!-- UPRAVIT: datum měnit při každé úpravě stránky -->
+  Mirek · aktualizováno 27. 11. 2026
+</footer>
+</div>
+</body>
+</html>
