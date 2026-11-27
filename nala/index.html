@@ -61,6 +61,22 @@
   .fmt{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:2px 6px;border-radius:6px;background:var(--line);color:var(--muted)}
   .new{font-size:.7rem;font-weight:700;color:#fff;background:var(--saffron);padding:1px 7px;border-radius:99px;margin-left:6px}
   .folder{font-weight:600;margin:14px 0 0}
+  /* materiály */
+  .fhead{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-bottom:10px}
+  .fhead .btn{margin:0}
+  .fhead .small{margin:0}
+  .fdir summary{font-size:1.02rem}
+  .fnum{width:24px;height:24px;border-radius:7px;background:var(--saffron-soft);color:var(--saffron);font-weight:700;font-size:.85rem;
+    display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .fdir .cnt{margin-left:auto;font-weight:normal;color:var(--muted);font-size:.85rem}
+  .card .fsub{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:12px 0 0 44px}
+  ul.files{list-style:none;padding:0;margin:4px 0 2px 44px}
+  ul.files li{display:flex;gap:10px;align-items:baseline;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line)}
+  ul.files li:first-child{border-top:0}
+  .fdesc{display:block;font-size:.85rem;color:var(--muted)}
+  .tags{display:flex;gap:5px;flex:none}
+  .fmt.ed{background:var(--saffron-soft);color:var(--saffron)}
+  @media(max-width:480px){.card .fsub,ul.files{margin-left:0}}
   /* mapa veršů */
   .verses{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:7px;margin:10px 0 14px}
   .v{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
@@ -131,36 +147,53 @@
 </section>
 
 <h2>Materiály</h2>
+<!-- UPRAVIT: materiály – složky odpovídají očíslovaným složkám na Protonu; aktuální verš a nahrávky mají "open" -->
 <section class="card">
-  <a class="btn" href="https://drive.proton.me/urls/K399FJVA2W#dECEULOw0seA" target="_blank" rel="noopener">Otevřít složku s materiály</a>
+  <div class="fhead">
+    <a class="btn" href="https://drive.proton.me/urls/K399FJVA2W#dECEULOw0seA" target="_blank" rel="noopener">Otevřít složku na Protonu</a>
+    <p class="small">Složky jsou na Protonu očíslované stejně jako tady.</p>
+  </div>
 
-  <p class="folder">Text</p>
-  <ul class="clean">
-    <li><span class="fmt">PDF</span><span>Čhagčhen mönlam – tibetský text a český překlad (25 veršů)<span class="new">nové</span></span></li>
-  </ul>
+  <details class="fdir">
+    <summary><span class="fnum">1</span>Text<span class="cnt">1 soubor</span></summary>
+    <ul class="files">
+      <li><span class="fname">Tibetský text a český překlad <span class="fdesc">všech 25 veršů</span></span><span class="tags"><span class="fmt">PDF</span></span></li>
+    </ul>
+  </details>
 
-  <p class="folder">Přehledy celého textu</p>
-  <ul class="clean">
-    <li><span class="fmt">A3</span><span>1 · Mapa textu – všech 25 veršů a jak na sebe navazují</span></li>
-    <li><span class="fmt">A3</span><span>2 · Verše-osnovy – verše 6, 7, 8, 9 a 18 řádek po řádku</span></li>
-  </ul>
+  <details class="fdir">
+    <summary><span class="fnum">2</span>Přehledy celého textu<span class="cnt">2 soubory</span></summary>
+    <ul class="files">
+      <li><span class="fname">Mapa textu <span class="fdesc">všech 25 veršů a jak na sebe navazují</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A3</span></span></li>
+      <li><span class="fname">Verše-osnovy <span class="fdesc">verše 6, 7, 8, 9 a 18 řádek po řádku</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A3</span></span></li>
+    </ul>
+  </details>
 
-  <p class="folder">Verš 4</p>
-  <ul class="clean">
-    <li><span class="fmt">A3</span><span>3 · Tělo</span></li>
-    <li><span class="fmt">A3</span><span>4 · Mysl a přítel</span></li>
-    <li><span class="fmt">PDF</span><span>Pracovní list 1 · osm svobod</span></li>
-    <li><span class="fmt">PDF</span><span>Pracovní list 2 · deset podmínek</span></li>
-    <li><span class="fmt">DOCX</span><span>Pracovní list 3 · důvěra, píle, moudrost</span></li>
-    <li><span class="fmt">DOCX</span><span>Pracovní list 4 · duchovní přítel</span></li>
-    <li><span class="fmt">PDF</span><span>10 · Překážky na cestě – přehled<span class="new">nové</span></span></li>
-  </ul>
-  <p class="folder">Nahrávky z hodin</p>
-  <ul class="clean">
-    <li><span class="fmt">MP4</span><span>26. 11. 2026 · verš 4, řádky 2–4 – video<span class="new">nové</span></span></li>
-    <li><span class="fmt">M4A</span><span>26. 11. 2026 · verš 4, řádky 2–4 – jen zvuk (menší soubor, do mobilu)<span class="new">nové</span></span></li>
-  </ul>
-  <p class="small" style="margin-top:12px">Listy A3 se dají vytisknout i na A4 – v tisku zvol „přizpůsobit stránce“. Listy ve formátu DOCX si můžeš upravovat a dopisovat.</p>
+  <details class="fdir" open>
+    <summary><span class="fnum">3</span>Verš 4<span class="cnt">3 přehledy · 4 pracovní listy</span></summary>
+    <p class="fsub">K výkladu</p>
+    <ul class="files">
+      <li><span class="fname">Tělo</span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A3</span></span></li>
+      <li><span class="fname">Mysl a přítel</span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A3</span></span></li>
+      <li><span class="fname">Překážky na cestě <span class="new">nové</span></span><span class="tags"><span class="fmt">PDF</span><span class="fmt">A4</span></span></li>
+    </ul>
+    <p class="fsub">Pracovní listy</p>
+    <ul class="files">
+      <li><span class="fname">1 · Osm svobod</span><span class="tags"><span class="fmt">PDF</span><span class="fmt ed">DOCX</span></span></li>
+      <li><span class="fname">2 · Deset podmínek</span><span class="tags"><span class="fmt">PDF</span><span class="fmt ed">DOCX</span></span></li>
+      <li><span class="fname">3 · Důvěra, píle, moudrost</span><span class="tags"><span class="fmt ed">DOCX</span></span></li>
+      <li><span class="fname">4 · Duchovní přítel</span><span class="tags"><span class="fmt ed">DOCX</span></span></li>
+    </ul>
+  </details>
+
+  <details class="fdir" open>
+    <summary><span class="fnum">4</span>Nahrávky z hodin<span class="cnt">1 hodina</span></summary>
+    <ul class="files">
+      <li><span class="fname">26. 11. 2026 <span class="new">nové</span><span class="fdesc">verš 4, řádky 2–4</span></span><span class="tags"><span class="fmt">video MP4</span><span class="fmt">zvuk M4A</span></span></li>
+    </ul>
+  </details>
+
+  <p class="small" style="margin-top:12px"><span class="fmt ed">DOCX</span> si můžeš upravovat a dopisovat. Listy A3 se dají vytisknout i na A4 – v tisku zvol „přizpůsobit stránce“. Zvuková nahrávka je menší, hodí se do mobilu.</p>
 </section>
 
 <h2>Mapa textu</h2>
